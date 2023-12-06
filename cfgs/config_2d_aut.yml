@@ -1,0 +1,40 @@
+# 1. directory
+root_path: "../../data/ACDC"
+res_path: "./results/ACDC"
+# sampling
+flag_sampling_based_on_lb: False
+# random seed
+seed: 2023
+test_interval_ep: 2
+
+
+# 2. training
+labeled_num: 3                # TBD:   3, 7, 14
+max_iterations: 30000
+base_lr: 0.01
+batch_size: 24
+labeled_bs: 12
+poly: True
+
+
+# 3. supervision
+ema_decay: 0.99
+cutmix_prob: 1.0
+flag_ulb_loss_type: "dice"
+conf_threshold: 0.95
+consistency: 2.0
+consistency_rampup: 50
+
+
+# 4. alternate --- no use
+alt_flag_epoch_shuffle_teachers: False
+alt_flag_conflict_stu_use_more: False # for student, not neccesary
+alt_param_ensemble_temp: 1.0 # for sharpen, not neccesary
+alt_param_threshold_self_training: 0.95 # no use
+
+# 4. alternate -- 2
+alt_flag_conflict_mode: "pixel_confidence" # always_tea, always_stu, random, pixel_confidence
+alt_flag_updating_period_random: True
+alt_param_updating_period_iters: 50 # half epoch
+alt_param_conflict_weight: 1.0
+
