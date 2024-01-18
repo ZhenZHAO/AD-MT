@@ -227,10 +227,12 @@ def train(args, snapshot_path):
                     # entropy
                     entropy_1 = -torch.sum(ema_outputs_soft_1 * torch.log2(ema_outputs_soft_1 + 1e-10), dim=1)
                     entropy_2 = -torch.sum(ema_outputs_soft_2 * torch.log2(ema_outputs_soft_2 + 1e-10), dim=1)
-
+                    
                     # weighted sum
-                    weighted_entropy = entropy_1 + entropy_2
-                    weighted_outputs = torch.exp(-weighted_entropy.unsqueeze(1)) * ema_outputs_soft_1 + torch.exp(-weighted_entropy.unsqueeze(1)) * ema_outputs_soft_2
+                    weights_1 = torch.exp(-entropy_1) / (torch.exp(-entropy_1) + torch.exp(-entropy_2))
+                    weights_2 = 1 - weights_1
+                    weighted_outputs = weights_1.unsqueeze(1) * ema_outputs_soft_1 + weights_2.unsqueeze(1) * ema_outputs_soft_2
+
                     weighted_outputs = torch.pow(weighted_outputs, 1.0 / alt_param_ensemble_temp)
                     weighted_outputs = weighted_outputs / torch.sum(weighted_outputs, dim=1, keepdim=True)
                     
