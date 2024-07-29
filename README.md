@@ -1,4 +1,7 @@
 # AD-MT
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/alternate-diverse-teaching-for-semi/semi-supervised-medical-image-segmentation-on-4)](https://paperswithcode.com/sota/semi-supervised-medical-image-segmentation-on-4?p=alternate-diverse-teaching-for-semi)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/alternate-diverse-teaching-for-semi/semi-supervised-medical-image-segmentation-on-8)](https://paperswithcode.com/sota/semi-supervised-medical-image-segmentation-on-8?p=alternate-diverse-teaching-for-semi)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/alternate-diverse-teaching-for-semi/semi-supervised-medical-image-segmentation-on-9)](https://paperswithcode.com/sota/semi-supervised-medical-image-segmentation-on-9?p=alternate-diverse-teaching-for-semi)
 
 [Alternate Diverse Teaching for Semi-supervised Medical Image Segmentation](https://arxiv.org/pdf/2311.17325.pdf)
 
